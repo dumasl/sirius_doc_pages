@@ -6,5 +6,7 @@ services:
 before_install:
 - docker pull ldumas/sirius_dockerfile:sirius
 - docker volume ls
-- docker run -v dumasl/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sirius_doc_pages; echo $PWD; ls -l *"
+- ls -l
+- ls -l *
+- docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sirius_doc_pages; echo $PWD; ls -l *"
 
