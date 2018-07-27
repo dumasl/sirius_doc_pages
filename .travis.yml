@@ -1,0 +1,9 @@
+langage: python
+
+services:
+    - docker
+
+before_install:
+- docker pull ldumas/sirius_dockerfile:sirius
+- docker run ldumas/sirius_dockerfile -t sirius /bin/sh -c "echo $PATH"
+
