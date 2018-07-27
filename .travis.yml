@@ -12,7 +12,7 @@ before_install:
 - ls -l $TRAVIS_BUILD_DIR/*
 
 script:
-- docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD; ls -l"
+- docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD; ls -l; cd sphinx; echo $PWD; ls -l; cd /sphinx; echo $PWD; ls -l"
 
 
 after_success:
