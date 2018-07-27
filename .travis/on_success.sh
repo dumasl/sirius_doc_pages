@@ -1,7 +1,7 @@
 if [ -n "${GITHUB_sirius_doc_API_KEY}" ]; then
     cd "$TRAVIS_BUILD_DIR"
-    docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sirius_doc_pages/sphinx; make html"
-    cd $HOME/sphinx/build/html/
+    docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sphinx; make html"
+    cd $TRAVIS_BUILD_DIR/sphinx/build/html/
     git init
     git checkout -b gh-pages
     git add .
