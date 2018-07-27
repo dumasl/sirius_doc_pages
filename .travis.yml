@@ -4,13 +4,13 @@ services:
     - docker
 
 before_install:
-    - docker pull ldumas/sirius_dockerfile:sirius
-    - docker volume ls
-    - ls -l
-    - ls -l *
+- docker pull ldumas/sirius_dockerfile:sirius
+- docker volume ls
+- ls -l
+- ls -l *
 
 script:
-    - docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD"
+- docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD"
 
 
 after_success:
