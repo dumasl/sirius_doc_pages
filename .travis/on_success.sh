@@ -1,4 +1,4 @@
-if [ -n "${GITHUB_sirius_doc_API_KEY}" ]; then
+if [ -n "${GITHUB_TOKEN}" ]; then
     cd "$TRAVIS_BUILD_DIR"
     docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sphinx; make html"
     cd $TRAVIS_BUILD_DIR/sphinx/build/
