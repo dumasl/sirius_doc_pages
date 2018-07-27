@@ -8,7 +8,7 @@ before_install:
 - ls -l *
 
 script:
-- docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD; ls -l; ls -l /"
+- docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "echo $PWD; cd /sirius_doc_pages/; ls -l; ls -l sphinx/"
 
 
 after_success:
