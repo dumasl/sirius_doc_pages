@@ -8,7 +8,6 @@ before_install:
     - docker volume ls
     - ls -l
     - ls -l *
-    - docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sirius_doc_pages; echo $PWD; ls -l *"
 
 script:
     - docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "echo hello"
@@ -17,8 +16,8 @@ script:
 after_success:
     if [ -n "${GITHUB_sirius_doc_API_KEY}" ]; then
         cd "$TRAVIS_BUILD_DIR"
-        docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "make html"
-        cd build/html/
+        docker run -v $HOME/sirius_doc_pages:/sirius_doc_pages ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sirius_doc_pages/sphinx; make html"
+        cd $HOME/sphinx/build/html/
         git init
         git checkout -b gh-pages
         git add .
