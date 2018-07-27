@@ -1,9 +1,12 @@
+lannguage: python
+
 services:
 - docker
 
 before_install:
 - docker pull ldumas/sirius_dockerfile:sirius
 - docker volume ls
+- echo $HOME
 - ls -l $HOME
 - ls -l $HOME/*
 
