@@ -1,7 +1,11 @@
 if [ -n "${GITHUB_TOKEN}" ]; then
     cd "$TRAVIS_BUILD_DIR"
     docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius_pages /bin/sh -c "cd /sphinx; make html"
+    echo $PWD
+    ls -l
     cd $TRAVIS_BUILD_DIR/sphinx/build/
+    echo $PWD
+    ls -l
     touch .nojekyll
     git init
     git checkout -b gh-pages
