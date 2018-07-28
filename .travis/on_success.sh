@@ -1,6 +1,6 @@
 if [ -n "${GITHUB_TOKEN}" ]; then
     cd "$TRAVIS_BUILD_DIR"
-    docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius /bin/sh -c "cd /sphinx; make html"
+    docker run -v $TRAVIS_BUILD_DIR/sphinx:/sphinx ldumas/sirius_dockerfile:sirius_pages /bin/sh -c "cd /sphinx; make html"
     cd $TRAVIS_BUILD_DIR/sphinx/build/
     touch .nojekyll
     git init
